@@ -46,4 +46,4 @@ ledgerSchema.pre('findOneAndReplace', preventLedgerModification);
 
 const ledgerModel = mongoose.model('ledger', ledgerSchema);
 
-module.exports = ledgerSchema;
+module.exports = ledgerModel;
