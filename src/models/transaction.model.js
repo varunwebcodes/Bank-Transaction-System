@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const transaction = new mongoose.Schema({
+const transactionSchema = new mongoose.Schema({
     fromAccount:{
         type: mongoose.Schema.Types.ObjectId,
         ref: "account",
@@ -26,7 +26,7 @@ const transaction = new mongoose.Schema({
         required:[true, "Amount is required for creating a transaction"],
         min:[0, "Transaction amount cannot be negative"]
     },
-    idempotencykey:{
+    idempotencyKey:{
         type:String,
         required:[true, "Idempotency Key is required for creating a transaction"],
         index:true,
