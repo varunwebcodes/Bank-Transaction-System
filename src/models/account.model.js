@@ -37,7 +37,7 @@ accountSchema.methods.getBalance = async function(){
                 totalDebit:{
                     $sum:{
                         $cond:[
-                            {$eq:["type","DEBIT"]},
+                            {$eq:["$type","DEBIT"]},
                             "$amount",
                             0
                         ]
@@ -46,7 +46,7 @@ accountSchema.methods.getBalance = async function(){
                 totalCredit:{
                     $sum:{
                         $cond:[
-                            { $eq: ["type","CREDIT"]},
+                            { $eq: ["$type","CREDIT"]},
                             "amount",
                             0
                         ]
